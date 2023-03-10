@@ -48,5 +48,26 @@ DictionaryVeriTipi = {
 print(type(DictionaryVeriTipi))
 
 
+'''ŞART BLOKLARI KISMI'''
 
+#Kodlamaio örnegin yoklama kısmını tamamlamadan ödev1'e geçme kısmı bir şarttır yoklama tamamlandıysa ödev1'e geçilir.
+#Aynı şekilde ödev1 tamamlandiysa ödev2'ye geçilir
 
+ogrenciAdi = "Mahmut Can"
+yoklama = True
+odev1 = True
+odev2 = False
+
+if ogrenciAdi == "Mahmut Can" and yoklama == True:
+    print("Ogrenci adi ve yoklama tamamlanmistir")
+    if odev1 == True:
+        print("Odev 1 tamamlandi Tebrikler. Şimdi devam edebilirisiniz!")
+        
+        if odev2 == True:
+             print("Odev 2 tamamlandi Tebrikler. Şimdi devam edebilirisiniz!")
+        else:
+            print("Önce Odev 2'i tamamlamalısınız.")
+    else:
+        print("Önce Odev 1'i tamamlamalısınız.")
+else:
+    print("Odev 1 e geçmek için yoklamanızı tamamlayiniz.")
