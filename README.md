@@ -1,3 +1,3 @@
-# Deneme github 
+# Kodlamaio Python Selenium Öğrenimi
 
-Deneme
+Bu kursta python yazılım dili kullanılarak test işlemleri öğrenilecektir.
