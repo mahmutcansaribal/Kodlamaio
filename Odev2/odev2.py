@@ -1,4 +1,4 @@
-# Öğrenci Kayıt Sistemi MAHMUT CAN SARIBAL
+# Öğrenci Kayıt Sistemi MAHMUT CAN SARIBAL Kodlamaio
 
 
 ogrenciListesi = list()
