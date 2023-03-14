@@ -17,14 +17,14 @@ def ogrencileriListele():
 def TopluEkle():
     while True:
         isimEkle = input("'Dur' yazana kadar girilen ogrenci isimleri listeye eklenecektir.\n")
-        if isimEkle == "Dur":
+        if isimEkle == "Dur" or "dur":
              break
         ogrenciListesi.append(isimEkle)
 
 def TopluSil():
     while True:
         isimSil = input("'Dur' yazana kadar girilen ogrenci isimler listeden silinecektir.\n")
-        if isimSil == "Dur":
+        if isimSil == "Dur" or "dur":
             break
         elif isimSil in ogrenciListesi:
             print("Yanlis Ogrenci ismi girdiniz!")
