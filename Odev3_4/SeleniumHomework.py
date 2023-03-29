@@ -122,8 +122,4 @@ class TestSauceSite:
 
 
 testClass = TestSauceSite()
-testClass.UsernameAndPasswordBlanKTest()
-testClass.OnlyPasswordBlankTest()
-testClass.TryNameAndPassword()
 testClass.xImage()
-testClass.UrlGetAndProductList()
