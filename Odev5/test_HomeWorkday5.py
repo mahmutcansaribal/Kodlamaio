@@ -12,7 +12,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 #İlgili bekleme işlemlerini yaparken hangi şarta olarak bekleneceğini söyler.
 from selenium.webdriver.support import expected_conditions as ec
 
-
+#Odev 5
 
 class Test_HomeWorkDay5:
     #Her Testten önce çagrilir.
