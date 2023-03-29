@@ -29,3 +29,4 @@ def testLogOut():
 @pytest.fixture
 def TestUser():
   return{'name':'Can', 'Surname':'Saribal'}
+
