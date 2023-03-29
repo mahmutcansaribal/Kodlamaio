@@ -40,18 +40,19 @@ class Test_DemoClass:
      #setup -> test_demo2 -> teardown
     def test_demo2(self):
         assert True
-
+    def waitForElementVisible(self,locator,timeout=5):
+        WebDriverWait(self.driver,5).until(ec.visibility_of_element_located(locator))
+    
     @pytest.mark.parametrize("username,password",[("1","1"),("kullaniciadim","sifrem")])
     def test_invalid_login(self,username,password):
         #Maksimum 5 saniye.
                 #Until; ne zamana kadar ...  şuna kadar bekle.
                 #Visibility: görünür olma durumu.
         # En fazla 5 saniye olacak şekilde user-name id'li elementin görünmesini bekle.
-        WebDriverWait(self.driver,5).until(ec.visibility_of_element_located((By.ID,"user-name")))
+        self.waitForElementVisible((By.ID,"user-name"))
         usernameInput = self.driver.find_element(By.ID,"user-name")
-        WebDriverWait(self.driver,5).until(ec.visibility_of_element_located((By.ID,"password")))
+        self.waitForElementVisible((By.ID,"password"),10)
         passwordInput = self.driver.find_element(By.ID,"password")
-
         usernameInput.send_keys(username)
         passwordInput.send_keys(password)
 
@@ -66,4 +67,5 @@ class Test_DemoClass:
 
         assert errorMessage.text == "Epic sadface: Username and password do not match any user in this service"
         
+    
     

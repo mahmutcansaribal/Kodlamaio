@@ -28,7 +28,7 @@ class Test_HomeWorDay5:
     #her testten sonra çağrılır.
     def teardown_method(self):
         self.driver.quit()
-        
+
     def waitForElementVisible(self,locator,timeout=5):
         WebDriverWait(self.driver,5).until(ec.visibility_of_element_located(locator))
 

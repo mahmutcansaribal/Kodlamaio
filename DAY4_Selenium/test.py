@@ -24,7 +24,6 @@ class Test_Sauce:
         errorMessage = driver.find_element(By.XPATH,"//*[@id='login_button_container']/div/form/div[3]/h3")
         testResult = errorMessage.text == "Epic sadface: Username and password do not match any user in this service"
         print(f"Error Message : {testResult}")
-
 testClass = Test_Sauce()
 testClass.test_invalid_login()
 
