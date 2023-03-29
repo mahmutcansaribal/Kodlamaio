@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 
 # Eğer driver hata verirse : https://chromedriver.chromium.org/downloads
 # pip install webdriver-manager
-
+#DAY 4
 driver = webdriver.Chrome(ChromeDriverManager().install())
 # Ekranı tam erkan yapar.
 driver.maximize_window()
