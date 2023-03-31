@@ -6,6 +6,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 import pytest
 from pathlib import Path
 from datetime import date
+import openpyxl
 
 #Bekleme işlemlerini ele alacak kütüphanedir.
 from selenium.webdriver.support.wait import WebDriverWait
@@ -43,7 +44,27 @@ class Test_DemoClass:
     def waitForElementVisible(self,locator,timeout=5):
         WebDriverWait(self.driver,5).until(ec.visibility_of_element_located(locator))
     
-    @pytest.mark.parametrize("username,password",[("1","1"),("kullaniciadim","sifrem")])
+    
+    def getData():
+        #veriyi Al
+        excelFile = openpyxl.load_workbook("/data/invalid_login.xlsx")
+        #Çalışacağımız sayfası söylüyoruz.
+        selectedSheet = excelFile["Sheet1"]
+        #Toplam satırı buluyoruz.
+        totalRows = selectedSheet.max_row
+        data = []
+
+        for i in range(2,totalRows+1):
+            username = selectedSheet.cell(i,1).value
+            password = selectedSheet.cell(i,2).value
+            tupleData = (username,password)
+            data.append(tupledata)
+        
+        return data
+
+
+
+    @pytest.mark.parametrize("username,password",getData())
     def test_invalid_login(self,username,password):
         #Maksimum 5 saniye.
                 #Until; ne zamana kadar ...  şuna kadar bekle.
