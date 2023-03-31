@@ -7,6 +7,7 @@ import pytest
 from pathlib import Path
 from datetime import date
 import openpyxl
+from constants import globalConstants 
 
 #Bekleme işlemlerini ele alacak kütüphanedir.
 from selenium.webdriver.support.wait import WebDriverWait
@@ -20,7 +21,7 @@ class Test_DemoClass:
     def setup_method(self):
         self.driver = webdriver.Chrome(ChromeDriverManager().install())
         self.driver.maximize_window()
-        self.driver.get("https://www.saucedemo.com/")
+        self.driver.get(globalConstants.URL)
 
         # günün tarihi al bu tarih ile bir klasör var mı kontrol et yoksa oluştur.
         self.folderPath = str(date.today())
@@ -47,7 +48,7 @@ class Test_DemoClass:
     
     def getData():
         #veriyi Al
-        excelFile = openpyxl.load_workbook("/data/invalid_login.xlsx")
+        excelFile = openpyxl.load_workbook("data/invalid_login.xlsx")
         #Çalışacağımız sayfası söylüyoruz.
         selectedSheet = excelFile["Sheet1"]
         #Toplam satırı buluyoruz.
@@ -58,7 +59,7 @@ class Test_DemoClass:
             username = selectedSheet.cell(i,1).value
             password = selectedSheet.cell(i,2).value
             tupleData = (username,password)
-            data.append(tupledata)
+            data.append(tupleData)
         
         return data
 
